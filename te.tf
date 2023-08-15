@@ -11,6 +11,7 @@ provider "thousandeyes" {
   token            = "01ab-4520e42d-544b-4942-9736-2402a6af27e4"
   account_group_id = "281474976711473"
 }
+
 data "thousandeyes_account_group" "dwoellga_ag" {
   name = "DWOELLHA - Meraki Beta"
 }
@@ -29,4 +30,9 @@ resource "thousandeyes_http_server" "www_thousandeyes_http_test" {
   agents {
     agent_id = data.thousandeyes_agent.frankfurt.agent_id
   }
+}
+
+resource "thousandeyes_label" "label_critical" {
+    name = "Critical"
+    type = "tests"
 }
