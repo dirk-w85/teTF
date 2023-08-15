@@ -15,8 +15,8 @@ data "thousandeyes_account_group" "dwoellga_ag" {
   name = "DWOELLHA - Meraki Beta"
 }
 
-data "thousandeyes_agent" "arg_cordoba" {
-  agent_name = "Cordoba, Argentina"
+data "thousandeyes_agent" "frankfurt" {
+  agent_name = "Frankfurt, Germany (Trial)"
 }
 
 resource "thousandeyes_http_server" "www_thousandeyes_http_test" {
@@ -27,6 +27,6 @@ resource "thousandeyes_http_server" "www_thousandeyes_http_test" {
   url = "https://www.thousandeyes.com"
 
   agents {
-    agent_id = data.thousandeyes_agent.arg_cordoba.agent_id
+    agent_id = data.thousandeyes_agent.frankfurt.agent_id
   }
 }
